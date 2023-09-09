@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&family=Ubuntu:wght@400;500&display=swap');
+
+body {
+  height: 100vh;
+  overflow-y: hidden;
+  background-color: #6b8f70;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+}

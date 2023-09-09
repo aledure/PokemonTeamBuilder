@@ -1,0 +1,24 @@
+<div class="box mt-3">
+  <div class="search-bar">
+  </div>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  <table class="table table-sm table-hover">
+    <tbody>
+      <tr *ngFor="let pokemon of pokemonList| paginate: { itemsPerPage: 50, currentPage: p }"
+        (click)="navigateToDetail(pokemon.id)">
+        <td scope="row" [ngClass]="getCardClass(pokemon.type[0])">#{{ pokemon.id }}</td>
+        <td [ngClass]="getCardClass(pokemon.type[0])"><img
+            [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + pokemon.id + '.png'"
+            class="pokemon-sprite" alt="{{ pokemon.name }}" loading="lazy" /></td>
+        <td [ngClass]="getCardClass(pokemon.type[0])">{{ pokemon.name }}</td>
+        <td [ngClass]="getCardClass(pokemon.type[0])">
+          <span *ngFor="let type of pokemon.type" class="badge badge-primary">{{ type }}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+
+
+

@@ -1,0 +1,24 @@
+<div *ngIf="pokemonDetails" class="container">
+  <div class="row">
+    <div class="col col-left">
+      <img
+        [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + pokemonDetails.id + '.png'"
+        alt="{{ pokemonDetails.name }}" class="pokemon-sprite" loading="lazy" />
+    </div>
+    <div class="col col-right">
+      <h2 class="pokemon-name">{{ pokemonDetails.name }}</h2>
+      <p>Type:
+        <span *ngFor="let type of pokemonDetails.types">
+          {{ type.type.name }}
+        </span>
+      </p>
+      <p>Abilities:
+        <span *ngFor="let ability of pokemonDetails.abilities">
+          {{ ability.ability.name }}
+        </span>
+      </p>
+    </div>
+  </div>
+  <!--(click)="navigateToTeam(pokemon.id) -->
+  <h3>Add to team</h3>
+</div>
