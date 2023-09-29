@@ -1,7 +1,7 @@
 <div class="box mt-3">
   <div class="search-bar">
   </div>
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
   <table class="table table-sm table-hover">
     <tbody>
       <tr *ngFor="let pokemon of pokemonList| paginate: { itemsPerPage: 50, currentPage: p }"
@@ -17,8 +17,5 @@
       </tr>
     </tbody>
   </table>
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
 </div>
-
-
-

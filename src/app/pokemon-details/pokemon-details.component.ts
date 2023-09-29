@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PokeAPIService } from '../shared/services/poke-apiservice.service';
+import { PokemonTeamService } from '../shared/services/pokemon-team.service';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -12,7 +13,8 @@ export class PokemonDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private pokeAPIService: PokeAPIService
+    private pokeAPIService: PokeAPIService,
+    private pokemonTeamService: PokemonTeamService
   ) {}
 
   ngOnInit(): void {
@@ -31,5 +33,12 @@ export class PokemonDetailsComponent implements OnInit {
         );
       }
     });
+  }
+  addToTeam(): void {
+    if (this.pokemonTeamService.getTeam().length < 6) {
+      this.pokemonTeamService.addToTeam(this.pokemonDetails);
+    } else {
+      console.log('Team is full!');
+    }
   }
 }

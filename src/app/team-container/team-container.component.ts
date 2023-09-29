@@ -1,26 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { PokeAPIService } from '../shared/services/poke-apiservice.service';
-
+import { PokemonTeamService } from '../shared/services/pokemon-team.service';
 @Component({
   selector: 'app-team-container',
   templateUrl: './team-container.component.html',
-  styleUrls: ['./team-container.component.scss']
+  styleUrls: ['./team-container.component.scss'],
 })
 export class TeamContainerComponent implements OnInit {
   team: any[] = [];
 
-  constructor(
-    private route: ActivatedRoute,
-    private pokeAPIService: PokeAPIService
-  ) {}
+  constructor(private pokemonTeamService: PokemonTeamService) {}
 
-  ngOnInit() {
-    // get pokemon id from details component url
-
-    // get pokemon details from api
-    // add pokemon to team
-
+  ngOnInit(): void {
+    this.team = this.pokemonTeamService.getTeam();
   }
-
+  removeFromTeam(pokemon: any): void {
+    this.pokemonTeamService.removeFromTeam(pokemon);
+    this.team = this.pokemonTeamService.getTeam();
+  }
 }

@@ -1,11 +1,12 @@
 <app-header></app-header>
 <div class="left-side-container">
-<div class="details-container mt-3">
-  <router-outlet name="details"></router-outlet>
-</div>
-<div class="team-container">
-<router-outlet name="team"></router-outlet>
-</div>
+  <div class="details-container mt-3">
+    <router-outlet name="details"></router-outlet>
+  </div>
+  <div class="team-container">
+    <!-- <router-outlet name="team"></router-outlet> -->
+    <app-team-container></app-team-container>
+  </div>
 </div>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
