@@ -1,13 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
-
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&family=Ubuntu:wght@400;500&display=swap');
 
-body {
-  height: 100vh;
-  overflow-y: hidden;
-  background-color: #6b8f70;
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
+
+
+.add-button {
+  border: none;
+  background-color: cadetblue;
+  padding: 10px 20px;
+  border-radius: 5em;
+  color: white;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+.remove-button {
+  border: none;
+  background-color: lightsalmon;
+
+  border-radius: 5em;
+  color: white;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+.capitalized {
+  text-transform: capitalize;
 }

@@ -1,6 +1,6 @@
 <div *ngIf="pokemonDetails" class="container">
   <div class="row">
-    <div class="col col-left">
+    <div class="col">
       <img
         [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + pokemonDetails.id + '.png'"
         alt="{{ pokemonDetails.name }}" class="pokemon-sprite" loading="lazy" />
@@ -19,5 +19,5 @@
       </p>
     </div>
   </div>
-  <button (click)="addToTeam()">Add to Team</button>
+  <button class="add-button" (click)="addToTeam()">Add to Team</button>
 </div>

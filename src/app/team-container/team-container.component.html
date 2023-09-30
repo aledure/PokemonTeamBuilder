@@ -1,40 +1,21 @@
-<!-- <div>
-  <h2>Your Pokemon Team</h2>
-  <div class="team-container">
-    <div class="team-pokemon" *ngFor="let pokemon of team">
-      <div class="pokemon-image">
-        <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + pokemon.id + '.png'"
-          alt="{{ pokemon.name }}" class="pokemon-sprite" loading="lazy" />
-      </div>
-      <div class="pokemon-name">{{ pokemon.name }}</div>
-      <div class="pokemon-types">
-        <span *ngFor="let type of pokemon.types">
-          {{ type.type.name }}
-        </span>
+<div class="container text-center">
+  <div class="row">
+    <h3 class="text-center">Your Pokemon team</h3>
+    <div class="col-12">
+    </div>
+    <div class="row">
+      <div class="col-sm-4 col-md-2 mx-auto gap-0 team-member" *ngFor="let pokemon of team">
+        <div class="row"><img
+            [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + pokemon.id + '.png'"
+            alt="{{ pokemon.name }}" class="pokemon-sprite" loading="lazy" /></div>
+        <div class="row capitalized">{{ pokemon.name }}</div>
+        <div class="row"><span *ngFor="let type of pokemon.types" class="capitalized">
+            {{ type.type.name }}
+          </span>
+        </div>
+        <div class="row">
+          <button class="remove-button" (click)="removeFromTeam(pokemon)">X</button>
+        </div>
       </div>
     </div>
   </div>
-</div> -->
-
-<div>
-  <h2>Your Pokemon Team</h2>
-  <div class="team-container">
-    <div class="team-pokemon" *ngFor="let pokemon of team">
-      <div class="pokemon-card">
-        <div class="pokemon-image">
-          <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + pokemon.id + '.png'"
-            alt="{{ pokemon.name }}" class="pokemon-sprite" loading="lazy" />
-        </div>
-        <div class="pokemon-details">
-          <div class="pokemon-name">{{ pokemon.name }}</div>
-          <div class="pokemon-types">
-            <span *ngFor="let type of pokemon.types">
-              {{ type.type.name }}
-            </span>
-          </div>
-        </div>
-      </div>
-      <button (click)="removeFromTeam(pokemon)">Remove</button>
-    </div>
-  </div>
-</div>
