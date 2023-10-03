@@ -1,7 +1,23 @@
+.team-container {
+  margin-left: 0.5em;
+  margin-top: 0;
+}
+
 .team-member {
-  background-color: white;
-  border-radius: 0.5em;
-  padding: 1em;
+  background-color: gainsboro;
   max-width: 16.66666666666667%;
   min-width: 16.66666666666667%;
+  padding: 1em;
+  margin-top: 0.75em;
+}
+
+.team-member:hover {
+  transition: all 0.5s ease;
+  transform: scale(1.1);
+  background-color: #e6e6e6;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+}
+
+.type-text {
+  font-size: 0.75em;
 }

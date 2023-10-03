@@ -11,6 +11,7 @@ import { TeamBuilderComponent } from './team-builder/team-builder.component';
 import { PokeAPIService } from './shared/services/poke-apiservice.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { TeamContainerComponent } from './team-container/team-container.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { TeamContainerComponent } from './team-container/team-container.componen
     PokemonListComponent,
     TeamBuilderComponent,
     TeamContainerComponent,
+    SearchbarComponent,
   ],
   imports: [
     BrowserModule,

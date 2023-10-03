@@ -50,6 +50,12 @@ export class PokeAPIService {
     }
   }
 
+  getRandomPokemon(): Observable<any> {
+    return this.http
+      .get(`${this.baseUrl}/pokemon/${Math.floor(Math.random() * 1020) + 1}`)
+      .pipe(catchError(this.handleError('getRandomPokemon', {})));
+  }
+
   // Handle HTTP errors
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

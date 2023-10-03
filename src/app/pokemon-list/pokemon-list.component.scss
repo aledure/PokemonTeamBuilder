@@ -6,98 +6,136 @@
   padding: 0.5em;
   border: 1px solid #ddd;
   background-color: #f5f5f5;
-  width: 60vw;
+  width: 59vw;
   height: 95vh;
   overflow-y: scroll;
   border-radius: 5px;
   float: right;
   margin-right: 1em;
+  font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 1.5em;
+  overflow-x: hidden;
 }
+
+tr {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+tr:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+  opacity: 1;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+}
+
 .box::-webkit-scrollbar {
   width: 12px;
 }
+
 .box::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
 }
+
 .box::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
+
 .table td {
   text-align: center;
- }
+}
+
 td {
   text-transform: capitalize;
   display: table-cell;
   vertical-align: middle;
 }
+
 .pokemon-sprite {
   width: 55px;
   height: auto;
 }
+
 .pagination {
   justify-content: center;
 }
+
 pagination-controls {
   display: flex;
   justify-content: center;
 }
 
-
-
 //CLASSES FOR TYPE-SPECIFIC STYLING
 .grass-type {
   background: #88cb66;
 }
+
 .fire-type {
   background-color: #f5944f;
 }
+
 .water-type {
   background-color: #76bdfe;
 }
+
 .poison-type {
   background-color: #c183c1;
 }
+
 .bug-type {
   background-color: #78d16e;
 }
+
 .normal-type {
   background-color: #c6c6a7;
 }
+
 .flying-type {
   background-color: #7d55f7;
 }
+
 .psychic-type {
   background-color: #fa8581;
 }
+
 .dark-type {
   background-color: #8a6955;
 }
+
 .electric-type {
   background-color: #f8d030;
 }
+
 .ground-type {
   background-color: #ebd69d;
 }
+
 .fighting-type {
   background-color: #c03028;
 }
+
 .rock-type {
   background-color: #b8a038;
 }
+
 .steel-type {
   background-color: #b8b8d0;
 }
+
 .ice-type {
   background-color: #98d8d8;
 }
+
 .ghost-type {
   background-color: #705898;
 }
+
 .dragon-type {
   background-color: #7038f8;
 }
+
 .fairy-type {
   background-color: #e79fef;
 }

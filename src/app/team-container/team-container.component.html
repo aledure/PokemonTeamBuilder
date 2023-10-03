@@ -1,15 +1,16 @@
 <div class="container text-center">
-  <div class="row">
+  <div class="row team-container">
     <h3 class="text-center">Your Pokemon team</h3>
+    <button class="small-button mx-auto" (click)="getRandomPokemon()">Add Random</button>
     <div class="col-12">
     </div>
     <div class="row">
-      <div class="col-sm-4 col-md-2 mx-auto gap-0 team-member" *ngFor="let pokemon of team">
+      <div class="col-sm-4 col-md-2 mx-auto team-member" *ngFor="let pokemon of team">
         <div class="row"><img
             [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + pokemon.id + '.png'"
             alt="{{ pokemon.name }}" class="pokemon-sprite" loading="lazy" /></div>
         <div class="row capitalized">{{ pokemon.name }}</div>
-        <div class="row"><span *ngFor="let type of pokemon.types" class="capitalized">
+        <div class="row"><span *ngFor="let type of pokemon.types" class="capitalized type-text">
             {{ type.type.name }}
           </span>
         </div>
