@@ -1,0 +1,22 @@
+.poke-judge-container {
+  width: 95vw;
+  border: 1px solid #ddd;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+h5 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.5em;
+  margin: 0.5em;
+}
+
+.left-column {
+  align-self: flex-start;
+}
+
+.right-column {
+  align-self: flex-end;
+}

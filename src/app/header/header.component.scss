@@ -1,12 +1,11 @@
 .header {
   position: relative;
   text-align: center;
-  // background-image: url('your-background-image.jpg');
-  color: black;
-  background-size: cover;
-  background-position: center;
+  color: white;
+  letter-spacing: 0.2em;
   height: 6em;
   overflow: hidden;
-  background-color: lightcoral;
+  background-color: rgba(95, 158, 160, 0.77);
   padding-top: 1.5em;
+  font-family: 'Epilogue', sans-serif;
 }

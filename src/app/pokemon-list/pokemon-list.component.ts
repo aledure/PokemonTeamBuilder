@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PokeAPIService } from '../shared/services/poke-apiservice.service';
 import { Router } from '@angular/router';
+import { SearchPipe } from '../shared/services/pipes/search.pipe';
+import { GenerationPipe } from '../shared/services/pipes/generation.pipe';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -10,24 +12,25 @@ import { Router } from '@angular/router';
 export class PokemonListComponent implements OnInit {
   pokemonList: any[] = [];
   p: number = 1;
+  searchQuery: string = '';
+  pokemon: any = '';
+  selectedGeneration: string = 'all';
 
   constructor(private pokeApiService: PokeAPIService, private router: Router) {}
 
   ngOnInit() {
     this.pokeApiService.getPokemonList().subscribe((data: any) => {
-      // Map results to an array of Pokemon
       this.pokemonList = data.results.map((pokemon: any, index: number) => {
         return {
           name: pokemon.name,
-          id: index + 1, // Pokedex number
-          type: [], // Placeholder for Pokemon type(s)
+          id: index + 1,
+          type: [],
         };
       });
-      // Fetch Pokemon type details
       this.fetchPokemonDetails();
     });
   }
-  // Defining CSS classes for each type
+
   getCardClass(pokemonType: string): string {
     const typeClasses: { [key: string]: string } = {
       grass: 'grass-type',

@@ -1,10 +1,29 @@
 <div class="box mt-3">
-  <div class="search-bar">
+  <div class="main-search-input-wrap">
+    <div class="main-search-input fl-wrap">
+      <div class="main-search-input-item">
+        <input type="text" [(ngModel)]="searchQuery" placeholder="Search for a Pokemon">
+      </div>
+      <button class="main-search-button">Search</button>
+    </div>
   </div>
+
+  <select [(ngModel)]="selectedGeneration">
+    <option value="all">Filter by Generation</option>
+    <option value="generation1">Kanto</option>
+    <option value="generation2">Johto</option>
+    <option value="generation3">Hoenn</option>
+    <option value="generation4">Sinnoh</option>
+    <option value="generation5">Unova</option>
+    <option value="generation6">Kalos</option>
+    <option value="generation7">Alola</option>
+    <option value="generation8">Galar</option>
+    <option value="generation9">Paldea</option>
+  </select>
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
   <table class="table table-sm table-hover">
     <tbody>
-      <tr *ngFor="let pokemon of pokemonList| paginate: { itemsPerPage: 50, currentPage: p }"
+      <tr *ngFor="let pokemon of pokemonList | search: searchQuery | paginate: { itemsPerPage: 50, currentPage: p }"
         (click)="navigateToDetail(pokemon.id)">
         <td scope="row" [ngClass]="getCardClass(pokemon.type[0])">#{{ pokemon.id }}</td>
         <td [ngClass]="getCardClass(pokemon.type[0])"><img

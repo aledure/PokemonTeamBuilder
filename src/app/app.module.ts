@@ -1,4 +1,4 @@
-import { NgModule, ChangeDetectionStrategy } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -7,11 +7,12 @@ import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.compo
 import { HeaderComponent } from './header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
-import { TeamBuilderComponent } from './team-builder/team-builder.component';
 import { PokeAPIService } from './shared/services/poke-apiservice.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { TeamContainerComponent } from './team-container/team-container.component';
-import { SearchbarComponent } from './searchbar/searchbar.component';
+import { FormsModule } from '@angular/forms';
+import { JudgeComponent } from './judge/judge.component';
+import { SearchPipe } from './shared/services/pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -19,9 +20,9 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
     PokemonDetailsComponent,
     HeaderComponent,
     PokemonListComponent,
-    TeamBuilderComponent,
     TeamContainerComponent,
-    SearchbarComponent,
+    JudgeComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +30,7 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
     HttpClientModule,
     NgxPaginationModule,
     NgbModule,
+    FormsModule,
   ],
   providers: [PokeAPIService],
   bootstrap: [AppComponent],
